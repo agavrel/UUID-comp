@@ -1,16 +1,13 @@
 # UUID-comp
 
-Hi guys, this is a non-AI summarized of the different unique identifiers for your database, 5 unique ( ! ) challengers imo:
+This is a non-AI generated summary of the different unique identifiers that can be used for a  database, 5 unique ( ! ) challengers imo:
 * UUID v4
 * UUID v7
 * ULID
 * TSID
 * Sonyflake
 
-PR if you want to submit your own algorithm or a decent one that I forgot.
-
-Best,
-agavrel
+Make a PR if you wish to submit your own algorithms or a decent one that I forgot.
 
 ---
 
@@ -129,3 +126,9 @@ However, if you want more generation rate in a single host, you can easily run m
 | ULID | 128 | 26 | one out of 1,208,925,819,614,629,174,706,176 in a given millisecond | No practical limit | Yes time-sorted |
 | TSID | 64 | 13 | Higher: At least a billion identifiers per millisecond before the risk appears | 70 | Yes time-sorted |
 | Sonyflake | 64 | 13 | | 174 | No |
+
+---
+
+### Conclusion (personal thoughts)
+
+Overall TSID has my preference for most usecases, especially it looks great to attribute unique IDs for messages as the timestamp is embedded within the unique identifier. (which means you can discard the timestamp as well, so you replace the timestamp which is 128 bits, and the UUID which is also 128 bits, with only 64 bits.
